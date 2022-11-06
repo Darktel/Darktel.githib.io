@@ -1,0 +1,66 @@
+site_name: Департамент по развитию и разработке ИС коммерческого блока
+repo_url: 
+site_dir: public
+
+theme:
+  name: material
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Necessary for search to work properly
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: ru
+  # favicon: assets/favicon.png
+  # icon:
+  #   logo: logo
+
+  features:
+    - navigation.top
+
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - attr_list
+  - def_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+  - search
+  - git-revision-date
+  - mkdocstrings
+  - autolinks
+
+# Структура навигации генерируемого сайта.
+# nav:
+#     - Home: index.md
+#     - Main resources: links_for_main_resources.md
+#     - Gitlab docs:
+#         - Pages: gitlab/pages.md
+#         - Runner: gitlab/gitlab_runners.md
+#     - db:
+#         - Migration: db/migration.md
+#     - Test environment: tst_specific_infra.md
+#     - Coverage: coverage.md
+#     - Infrastructure Rules: infrastructure_rules.md
+#     - Help: help.md
